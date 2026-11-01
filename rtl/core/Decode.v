@@ -50,19 +50,55 @@ module Decode(
 		
 		case (opcode)
 			
-			7'b0110011: is_rtype	= 1;	// R-Type (ADD, SUB, AND, OR, XOR,...)
+			7'b0110011: begin	// R-Type (ADD, SUB, AND, OR, XOR,...)
+				case (funct3)
+					3'b000: is_rtype = (funct7 == 7'b0000000) ||
+									 (funct7 == 7'b0100000);
+					3'b001, 3'b010, 3'b011, 3'b100,
+					3'b110, 3'b111: is_rtype = (funct7 == 7'b0000000);
+					3'b101: is_rtype = (funct7 == 7'b0000000) ||
+									 (funct7 == 7'b0100000);
+					default: is_rtype = 0;
+				endcase
+			end
 			
-			7'b0010011: is_itype	= 1;	// I-Type (ADDI, ANDI,..)
+			7'b0010011: begin	// I-Type (ADDI, ANDI,..)
+				case (funct3)
+					3'b000, 3'b010, 3'b011, 3'b100,
+					3'b110, 3'b111: is_itype = 1;
+					3'b001: is_itype = (funct7 == 7'b0000000);
+					3'b101: is_itype = (funct7 == 7'b0000000) ||
+									 (funct7 == 7'b0100000);
+					default: is_itype = 0;
+				endcase
+			end
 			
-			7'b0000011: is_load		= 1;	// LW
+			7'b0000011: begin	// LB, LH, LW, LBU, LHU
+				is_load = (funct3 == 3'b000) ||
+						  (funct3 == 3'b001) ||
+						  (funct3 == 3'b010) ||
+						  (funct3 == 3'b100) ||
+						  (funct3 == 3'b101);
+			end
 			
-			7'b0100011: is_store	= 1;	// SW
+			7'b0100011: begin	// SB, SH, SW
+				is_store = (funct3 == 3'b000) ||
+						   (funct3 == 3'b001) ||
+						   (funct3 == 3'b010);
+			end
 			
-			7'b1100011: is_branch	= 1;	// BEQ, BNE, BLT, BGE
+			7'b1100011: begin	// BEQ, BNE, BLT, BGE, BLTU, BGEU
+				is_branch = (funct3 == 3'b000) ||
+							(funct3 == 3'b001) ||
+							(funct3 == 3'b100) ||
+							(funct3 == 3'b101) ||
+							(funct3 == 3'b110) ||
+							(funct3 == 3'b111);
+			end
 			
 			7'b1101111: is_jal		= 1;	// JAL
 			
-			7'b1100111: is_jalr		= 1;	// JALR
+			7'b1100111: is_jalr		= (funct3 == 3'b000);	// JALR
 			
 			7'b0110111: is_lui		= 1; 	// LUI
 			

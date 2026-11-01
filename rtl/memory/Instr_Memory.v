@@ -9,7 +9,9 @@
 // --> instruction luôn là mem[PC] trong suốt chu kỳ
 // ====================================
 
-module Instr_Memory (
+module Instr_Memory #(
+	parameter INIT_FILE = "firmware/firmware.hex"
+) (
 	input clk,
 	input [31:0] addr,						// Địa chỉ lệnh kế tiếp (pc_next)
 	output reg [31:0] instruction		// Lệnh tại PC hiện tại
@@ -19,7 +21,7 @@ module Instr_Memory (
 
 	// Load firmware
 	initial begin
-		$readmemh("../firmware/firmware.hex", mem);
+		$readmemh(INIT_FILE, mem);
 	end
 
 	always @(posedge clk) begin

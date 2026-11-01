@@ -8,7 +8,7 @@
 module Baud_Gen #(
 
 	parameter integer CLK_SYS 		= 50_000_000,	// Tần số clock đưa vào module (Hz)
-	parameter integer BAUD_RATE	= 9600,
+	parameter integer BAUD_RATE	= 115200,
 	parameter integer OVERSAMPLE	= 16				// Số lần lấy mẫu bit
 )
 (

@@ -22,6 +22,11 @@ module CORE #(
 	input uart_rx,
 	output uart_tx,
 
+	// INMP441 I2S
+	input inmp441_sd,
+	output inmp441_sck,
+	output inmp441_ws,
+
 	// Màn hình LED 7 đoạn
 	output [6:0] HEX0,
 	output [6:0] HEX1,
@@ -243,6 +248,10 @@ module CORE #(
 
 	wire [31:0] ram_data;
 	wire [31:0] gpio_data;
+	wire [31:0] inmp_data;
+	wire inmp_sample_valid;
+	wire [31:0] inmp_sample_data;
+	reg inmp_sample_pending;
 
 	wire [31:0] data_out;
 
@@ -257,6 +266,8 @@ module CORE #(
 	localparam UART_TX_ADDR		= 32'h1000_0010;
 	localparam UART_RX_ADDR		= 32'h1000_0014;
 	localparam UART_STATUS_ADDR	= 32'h1000_0018;
+	localparam INMP_SAMPLE_ADDR	= 32'h1000_0024;
+	localparam INMP_STATUS_ADDR	= 32'h1000_0028;
 
 	// GPIO
 	wire is_key = (alu_result == KEY_ADDR);
@@ -272,12 +283,16 @@ module CORE #(
 	wire is_uart_tx = (alu_result == UART_TX_ADDR);
 	wire is_uart_rx = (alu_result == UART_RX_ADDR);
 	wire is_uart_status = (alu_result == UART_STATUS_ADDR);
+	wire is_inmp_sample = (alu_result == INMP_SAMPLE_ADDR);
+	wire is_inmp_status = (alu_result == INMP_STATUS_ADDR);
 
 	// Địa chỉ thuộc vùng ngoại vi (không phải RAM)
 	wire is_io = is_gpio ||
 				 is_uart_tx ||
 				 is_uart_rx ||
 				 is_uart_status ||
+				 is_inmp_sample ||
+				 is_inmp_status ||
 				 is_seg7 ||
 				 is_sw ||
 				 is_key;
@@ -346,6 +361,32 @@ module CORE #(
 		.gpio_in		(SW),
 		.gpio_out	(led_gpio)
 	);
+
+	INMP441_Reader #(
+		.CLK_FREQ		(CLK_FREQ),
+		.LEFT_CHANNEL	(1)
+	) INMP441_uut (
+		.clk			(clk),
+		.reset			(reset),
+		.serial_data	(inmp441_sd),
+		.i2s_bclk		(inmp441_sck),
+		.i2s_lrclk		(inmp441_ws),
+		.sample_data	(inmp_sample_data),
+		.sample_valid	(inmp_sample_valid)
+	);
+
+	always @(posedge clk) begin
+		if (reset) begin
+			inmp_sample_pending <= 1'b0;
+		end
+		else if (inmp_sample_valid) begin
+			inmp_sample_pending <= 1'b1;
+		end
+		else if (MemRead && load_stall &&
+				 (is_inmp_sample || is_inmp_status)) begin
+			inmp_sample_pending <= 1'b0;
+		end
+	end
 
 	// =========================================
 	// Màn hình LED 7 đoạn
@@ -430,12 +471,18 @@ module CORE #(
 				is_uart_status ? {30'b0, tx_full, rx_empty}:
 				32'b0;
 
+	assign inmp_data =
+				is_inmp_sample ? inmp_sample_data :
+				is_inmp_status ? {31'b0, inmp_sample_pending} :
+				32'b0;
+
 
 	assign data_out =
 				is_gpio ? gpio_data :
 				is_sw	  ? {24'b0, SW} :
 				is_key  ? {30'b0, KEY} :
 				(is_uart_rx || is_uart_status) ? uart_data :
+				(is_inmp_sample || is_inmp_status) ? inmp_data :
 				ram_data;
 
 	// =======================================

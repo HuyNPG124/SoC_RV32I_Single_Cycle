@@ -15,7 +15,7 @@ nwords = int(argv[2])
 with open(binfile, "rb") as f:
     bindata = f.read()
 
-assert len(bindata) < 4*nwords
+assert len(bindata) <= 4*nwords
 #assert len(bindata) % 4 == 0
 while len(bindata) % 4 != 0:
     bindata += b'\x00'
@@ -26,4 +26,3 @@ for i in range(nwords):
         print("%02x%02x%02x%02x" % (w[3], w[2], w[1], w[0]))
     else:
         print("0")
-

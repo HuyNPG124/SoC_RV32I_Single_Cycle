@@ -17,6 +17,11 @@ module rv32 #(
 	input  uart_rx,			// nối vào TXD của module USB-UART
 	output uart_tx,			// nối vào RXD của module USB-UART
 
+	// INMP441 I2S
+	input  inmp441_sd,
+	output inmp441_sck,
+	output inmp441_ws,
+
 	output led_run			// LED trên board sáng (mức 0) khi CPU đang chạy
 );
 
@@ -82,7 +87,10 @@ module rv32 #(
 		.LEDR		(),
 		.uart_rx	(uart_rx),
 		.uart_tx	(uart_tx),
-		.HEX0		(),
+		.inmp441_sd		(inmp441_sd),
+		.inmp441_sck	(inmp441_sck),
+		.inmp441_ws		(inmp441_ws),
+		.HEX0			(),
 		.HEX1		(),
 		.HEX2		(),
 		.HEX3		(),

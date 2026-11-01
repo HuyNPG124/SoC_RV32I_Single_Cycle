@@ -10,6 +10,7 @@
 module INMP441_Reader #(
     parameter integer CLK_FREQ    = 50_000_000,
     parameter integer SAMPLE_RATE = 16_000,
+    // 1 selects the left slot (LRCLK low); 0 selects the right slot.
     parameter integer LEFT_CHANNEL = 1
 ) (
     input  wire        clk,

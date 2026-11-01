@@ -8,7 +8,9 @@
 // + Nạp sẵn firmware.hex để đọc được .rodata / .data
 // =========================================
 
-module Data_RAM (
+module Data_RAM #(
+	parameter INIT_FILE = "firmware/firmware.hex"
+) (
 	input clk,
 	input [31:0] addr,			// Địa chỉ cần truy cập vào RAM
 	input [31:0] wr_data,		// Dữ liệu cần ghi (đã căn đúng làn byte)
@@ -36,7 +38,7 @@ module Data_RAM (
 	integer i;
 
 	initial begin
-		$readmemh("../firmware/firmware.hex", init_mem);
+		$readmemh(INIT_FILE, init_mem);
 
 		for (i = 0; i < 1024; i = i + 1) begin
 			bank0[i] = init_mem[i][7:0];

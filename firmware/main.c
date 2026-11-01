@@ -12,11 +12,14 @@
 #define UART_RX         REG32(0x10000014)   // Đọc: nhận 1 byte
 #define UART_STATUS     REG32(0x10000018)   // bit 0: rx_empty, bit 1: tx_full
 #define KEYS            REG32(0x10000020)   // Đọc: KEY[1:0] (nhấn = 0)
+#define INMP_SAMPLE     REG32(0x10000024)   // Sample âm thanh 32-bit mới nhất
+#define INMP_STATUS     REG32(0x10000028)   // bit 0: có sample mới
 
 #define UART_RX_EMPTY   0x1
 #define UART_TX_FULL    0x2
 
 #define TICKS_PER_STEP  100000              // Số vòng lặp giữa 2 lần tăng bộ đếm
+#define INMP_SAMPLE_INTERVAL 1500000        // Khoảng 1 giây ở clock core 50 MHz
 
 // Biến trong .data: chỉ đọc đúng nếu Data_RAM được nạp firmware
 volatile uint32_t init_value = 0x12345678;
@@ -86,6 +89,7 @@ static uint32_t self_test(void)
 // =========================
 // MAIN
 // + UART 115200 8N1: in lời chào, echo lại ký tự nhận được
+// + Gửi một sample INMP441 32-bit khoảng mỗi giây
 // + LEDR = SW
 // + HEX5..HEX4: mã ASCII ký tự nhận cuối cùng
 // + HEX3..HEX0: bộ đếm, nhấn KEY1 để xóa
@@ -95,9 +99,10 @@ int main(void)
     uint32_t count = 0;
     uint32_t tick = 0;
     uint32_t last_char = 0;
+    uint32_t inmp_timer = 0;
     uint32_t errors;
 
-    uart_puts("\r\nRV32I single-cycle core - DE10-Lite\r\n");
+    uart_puts("\r\nRV32I single-cycle core - DE10-Lite lambda\r\n");
 
     errors = self_test();
     if (errors == 0) {
@@ -130,6 +135,14 @@ int main(void)
         if (++tick >= TICKS_PER_STEP) {
             tick = 0;
             count++;
+        }
+
+        if (++inmp_timer >= INMP_SAMPLE_INTERVAL) {
+            inmp_timer = 0;
+
+            uart_puts("INMP: 0x");
+            uart_puthex(INMP_SAMPLE);
+            uart_puts((INMP_STATUS & 0x1) ? "\r\n" : " (no sample)\r\n");
         }
 
         HEX = (last_char << 16) | (count & 0xFFFF);
