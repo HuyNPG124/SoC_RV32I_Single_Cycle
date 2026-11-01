@@ -1,0 +1,105 @@
+{
+ "Device" : "GW2AR-18C",
+ "Files" : [
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/ALU.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/ALU_Control.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Baud_Gen.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Branch.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Control.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Data_RAM.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Decode.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/FIFO.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/GPIO.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/ImmGen.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Instr_Memory.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Load_Store_Unit.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/PC_Logic.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Program_Counter.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Regfile.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Seg7_Decoder.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/TangNano20K_CORE.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART_Rx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART_Tx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/mux2to1.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/impl/temp/rtl_parser.result",
+ "Top" : "TangNano20K_CORE",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

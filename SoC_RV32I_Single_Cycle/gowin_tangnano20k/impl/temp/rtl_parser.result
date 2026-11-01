@@ -1,0 +1,242 @@
+[
+ {
+  "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/TangNano20K_CORE.v",
+  "InstLine" : 9,
+  "InstName" : "TangNano20K_CORE",
+  "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/TangNano20K_CORE.v",
+  "ModuleLine" : 9,
+  "ModuleName" : "TangNano20K_CORE",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/TangNano20K_CORE.v",
+    "InstLine" : 52,
+    "InstName" : "CORE_uut",
+    "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "CORE",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 49,
+      "InstName" : "PC_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Program_Counter.v",
+      "ModuleLine" : 5,
+      "ModuleName" : "Program_Counter"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 69,
+      "InstName" : "IM_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Instr_Memory.v",
+      "ModuleLine" : 12,
+      "ModuleName" : "Instr_Memory"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 93,
+      "InstName" : "DC_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Decode.v",
+      "ModuleLine" : 8,
+      "ModuleName" : "Decode"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 146,
+      "InstName" : "CT_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Control.v",
+      "ModuleLine" : 14,
+      "ModuleName" : "Control"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 177,
+      "InstName" : "RF_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Regfile.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "Regfile"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 195,
+      "InstName" : "IG_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/ImmGen.v",
+      "ModuleLine" : 9,
+      "ModuleName" : "ImmGen"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 212,
+      "InstName" : "AC_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/ALU_Control.v",
+      "ModuleLine" : 8,
+      "ModuleName" : "ALU_Control"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 219,
+      "InstName" : "ALU_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/ALU.v",
+      "ModuleLine" : 5,
+      "ModuleName" : "ALU"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 231,
+      "InstName" : "BR_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Branch.v",
+      "ModuleLine" : 7,
+      "ModuleName" : "Branch"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 308,
+      "InstName" : "LSU_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Load_Store_Unit.v",
+      "ModuleLine" : 9,
+      "ModuleName" : "Load_Store_Unit"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 322,
+      "InstName" : "DR_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Data_RAM.v",
+      "ModuleLine" : 11,
+      "ModuleName" : "Data_RAM"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 338,
+      "InstName" : "GPIO_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/GPIO.v",
+      "ModuleLine" : 7,
+      "ModuleName" : "GPIO"
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 354,
+      "InstName" : "HEX_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+      "ModuleLine" : 6,
+      "ModuleName" : "Hex7_Seg",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+        "InstLine" : 36,
+        "InstName" : "d0",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Seg7_Decoder.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "Seg7_Decoder"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+        "InstLine" : 37,
+        "InstName" : "d1",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Seg7_Decoder.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "Seg7_Decoder"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+        "InstLine" : 38,
+        "InstName" : "d2",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Seg7_Decoder.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "Seg7_Decoder"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+        "InstLine" : 39,
+        "InstName" : "d3",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Seg7_Decoder.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "Seg7_Decoder"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+        "InstLine" : 40,
+        "InstName" : "d4",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Seg7_Decoder.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "Seg7_Decoder"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Hex7_Seg.v",
+        "InstLine" : 41,
+        "InstName" : "d5",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Seg7_Decoder.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "Seg7_Decoder"
+       }
+      ]
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 388,
+      "InstName" : "uart_inst",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART.v",
+      "ModuleLine" : 6,
+      "ModuleName" : "UART",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART.v",
+        "InstLine" : 51,
+        "InstName" : "baud_gen",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/Baud_Gen.v",
+        "ModuleLine" : 8,
+        "ModuleName" : "Baud_Gen"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART.v",
+        "InstLine" : 75,
+        "InstName" : "tx_fifo",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/FIFO.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "FIFO"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART.v",
+        "InstLine" : 91,
+        "InstName" : "uart_tx",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART_Tx.v",
+        "ModuleLine" : 8,
+        "ModuleName" : "UART_Tx"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART.v",
+        "InstLine" : 175,
+        "InstName" : "uart_rx",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART_Rx.v",
+        "ModuleLine" : 8,
+        "ModuleName" : "UART_Rx"
+       },
+       {
+        "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/UART.v",
+        "InstLine" : 189,
+        "InstName" : "rx_fifo",
+        "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/FIFO.v",
+        "ModuleLine" : 6,
+        "ModuleName" : "FIFO"
+       }
+      ]
+     },
+     {
+      "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/CORE.v",
+      "InstLine" : 465,
+      "InstName" : "PCL_uut",
+      "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/PC_Logic.v",
+      "ModuleLine" : 5,
+      "ModuleName" : "PC_Logic"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "InstFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/mux2to1.v",
+  "InstLine" : 5,
+  "InstName" : "mux2to1",
+  "ModuleFile" : "C:/Users/Admin/Downloads/SoC_RV32I_Single_Cycle/SoC_RV32I_Single_Cycle/gowin_tangnano20k/src/mux2to1.v",
+  "ModuleLine" : 5,
+  "ModuleName" : "mux2to1"
+ }
+]
