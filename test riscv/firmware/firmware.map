@@ -1,0 +1,73 @@
+
+Merging object attributes
+
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x00000000         0x00001000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x00000000      0x314
+ *(.text.start)
+ .text.start    0x00000000       0x10 ./start.o
+                0x00000000                start
+ *(.text*)
+ .text          0x00000010        0x0 ./start.o
+ .text          0x00000010      0x274 ./main.o
+                0x000001a4                main
+ *(.rodata*)
+ .rodata.str1.4
+                0x00000284       0x79 ./main.o
+ *fill*         0x000002fd        0x3 
+ .rodata        0x00000300       0x11 ./main.o
+                0x00000314                        . = ALIGN (0x4)
+ *fill*         0x00000311        0x3 
+
+.rela.dyn       0x00000314        0x0
+ .rela.text.start
+                0x00000314        0x0 ./start.o
+
+.data           0x00000314        0x0
+ *(.data*)
+ .data          0x00000314        0x0 ./start.o
+ .data          0x00000314        0x0 ./main.o
+                0x00000314                        . = ALIGN (0x4)
+
+.sdata          0x00000314        0x4
+ .sdata         0x00000314        0x4 ./main.o
+                0x00000314                init_value
+
+.bss            0x00000318        0x0
+ *(.bss*)
+ .bss           0x00000318        0x0 ./start.o
+ .bss           0x00000318        0x0 ./main.o
+                0x00000318                        . = ALIGN (0x4)
+                0x00000318                        . = ALIGN (0x4)
+                0x00001000                        . = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00001000                        _stack_top = .
+LOAD ./start.o
+LOAD ./main.o
+LOAD /opt/riscv32im/lib/gcc/riscv32-unknown-elf/16.1.0/libgcc.a
+OUTPUT(firmware.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x1c
+ .riscv.attributes
+                0x00000000       0x1a ./start.o
+ .riscv.attributes
+                0x0000001a       0x1c ./main.o
+
+.comment        0x00000000       0x1b
+ .comment       0x00000000       0x1b ./main.o
+                                 0x1c (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 ./main.o

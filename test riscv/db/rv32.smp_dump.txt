@@ -1,0 +1,21 @@
+
+State Machine - |rv32|CORE:CORE_uut|UART:uart_inst|tx_state
+Name tx_state.TX_SEND tx_state.TX_WAIT tx_state.TX_READ tx_state.TX_IDLE 
+tx_state.TX_IDLE 0 0 0 0 
+tx_state.TX_READ 0 0 1 1 
+tx_state.TX_WAIT 0 1 0 1 
+tx_state.TX_SEND 1 0 0 1 
+
+State Machine - |rv32|CORE:CORE_uut|UART:uart_inst|UART_Rx:uart_rx|state
+Name state.STOP state.DATA state.START state.IDLE 
+state.IDLE 0 0 0 0 
+state.START 0 0 1 1 
+state.DATA 0 1 0 1 
+state.STOP 1 0 0 1 
+
+State Machine - |rv32|CORE:CORE_uut|UART:uart_inst|UART_Tx:uart_tx|state
+Name state.STOP state.DATA state.START state.IDLE 
+state.IDLE 0 0 0 0 
+state.START 0 0 1 1 
+state.DATA 0 1 0 1 
+state.STOP 1 0 0 1 
